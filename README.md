@@ -34,3 +34,13 @@ The Sites deployment hosts the frontend only. Sites uses a Worker runtime, so th
 - `server/index.mjs`: contact storage and API.
 
 External Google Fonts fall back to system fonts. The sculpture uses no external models or textures. Reduced-motion preferences disable continuous rotation and marquee animation.
+
+## GitHub Pages
+
+The `.github/workflows/deploy-pages.yml` workflow builds and deploys the static frontend on every push to `main`. In repository **Settings → Pages**, choose **GitHub Actions** as the build source. The project URL is:
+
+https://salilsen056-svg.github.io/portfolio.github.io/
+
+The repository link itself is a source-code page. The workflow sets `GITHUB_PAGES=true` to add the required `/portfolio.github.io` base path and exports the site into `out/`.
+
+GitHub Pages cannot run Express or MongoDB. Deploy `server/index.mjs` separately, configure its MongoDB URI and `CLIENT_ORIGIN=https://salilsen056-svg.github.io`, then set the repository Actions variable `NEXT_PUBLIC_API_URL` to its HTTPS URL and rerun the workflow. Without that setting, the portfolio still works and the contact form reports that its service awaits setup.
