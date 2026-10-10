@@ -1,0 +1,23 @@
+{
+  "name": "orbit-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --hostname 0.0.0.0",
+    "build": "next build",
+    "start": "serve out",
+    "server": "node --env-file-if-exists=.env server/index.mjs"
+  },
+  "dependencies": {
+    "next": "^15.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "three": "^0.180.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.18.0",
+    "cors": "^2.8.5",
+    "express-rate-limit": "^8.1.0",
+    "helmet": "^8.1.0",
+    "serve": "^14.2.4"
+  }
+}
